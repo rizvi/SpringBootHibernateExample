@@ -73,6 +73,8 @@ td,th {
 				<th width="120">Body</th>
 				<th width="60">Edit</th>
 				<th width="60">Delete</th>
+<!-- 				<th width="60">Json</th> -->
+<!-- 				<th width="60">Xml</th> -->
 			</tr>
 			<c:forEach items="${listOfStories}" var="story">
 				<tr>
@@ -82,6 +84,8 @@ td,th {
 					<td>${story.body}</td>
 					<td><a href="<c:url value='/updateStory/${story.id}' />">Edit</a></td>
 					<td><a href="<c:url value='/deleteStory/${story.id}' />">Delete</a></td>
+<%-- 					<td><a href="<c:url value='/getStoryAsJson/${story.id}' />">Json</a></td> --%>
+<%-- 					<td><a href="<c:url value='/getStoryAsXml/${story.id}' />">Xml</a></td> --%>
 				</tr>
 			</c:forEach>
 		</table>

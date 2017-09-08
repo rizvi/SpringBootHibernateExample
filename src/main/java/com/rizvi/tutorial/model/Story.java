@@ -6,10 +6,14 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /*
  * This is our model class and it corresponds to Story table in database
  */
+//@XmlRootElement
 @Entity
 @Table(name = "STORY")
 public class Story {
@@ -39,6 +43,7 @@ public class Story {
 		this.body = body;
 	}
 
+//	@XmlElement
 	public String getTitle() {
 		return title;
 	}
@@ -47,6 +52,7 @@ public class Story {
 		this.title = title;
 	}
 
+//	@XmlElement
 	public String getAuthor() {
 		return author;
 	}
@@ -55,6 +61,7 @@ public class Story {
 		this.author = author;
 	}
 
+//	@XmlElement
 	public String getBody() {
 		return body;
 	}
@@ -63,12 +70,18 @@ public class Story {
 		this.body = body;
 	}
 
+//	@XmlElement
 	public int getId() {
 		return id;
 	}
 
 	public void setId(int id) {
 		this.id = id;
+	}
+
+	@Override
+	public String toString() {
+		return "Story [id=" + id + ", title=" + title + ", author=" + author + ", body=" + body + "]";
 	}
 
 }
