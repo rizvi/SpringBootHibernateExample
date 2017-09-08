@@ -8,6 +8,10 @@
 	<url>http://maven.apache.org</url>
 	<packaging>war</packaging>
 
+	<properties>
+		<jackson.databind-version>2.2.3</jackson.databind-version>
+	</properties>
+
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
@@ -65,16 +69,20 @@
 			<groupId>commons-pool</groupId>
 			<artifactId>commons-pool</artifactId>
 		</dependency>
+
+		<!-- Jackson -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<!-- <version>${jackson.databind-version}</version> -->
+		</dependency>
 	</dependencies>
-<!-- 	<build> -->
-<!-- 		<finalName>SpringBootHibernateExample</finalName> -->
-<!-- 	</build> -->
 	<build>
 		<sourceDirectory>src</sourceDirectory>
 		<plugins>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
-<!-- 				<version>3.1</version> -->
+				<!-- <version>3.1</version> -->
 				<configuration>
 					<source>1.7</source>
 					<target>1.7</target>
@@ -82,7 +90,7 @@
 			</plugin>
 			<plugin>
 				<artifactId>maven-war-plugin</artifactId>
-<!-- 				<version>2.3</version> -->
+				<!-- <version>2.3</version> -->
 				<configuration>
 					<warSourceDirectory>src/main/webapp</warSourceDirectory>
 					<failOnMissingWebXml>false</failOnMissingWebXml>

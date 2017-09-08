@@ -6,10 +6,12 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /*
  * This is our model class and it corresponds to Story table in database
  */
+@XmlRootElement
 @Entity
 @Table(name = "STORY")
 public class Story {
